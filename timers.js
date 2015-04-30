@@ -10,34 +10,24 @@ pause.addEventListener("click", pauseTime)
 reset.addEventListener("click", resetTime)
 
 function startTime(){
-  window.setInterval(startTimer, 1000);
-  // timer.change the text in to 1 s ...
-  // i = 0
-  // time = i + 1
-  // console.log(time)
-  // will it start at 0 everytime!?
-  // there has to be an arguement, the currentTime
+  startInterval = window.setInterval(startTimer, 1000);
+
 }
 
 function pauseTime(){
-  console.log("heyooo")
-
-  clearInterval(intervalID)
+  clearInterval(startInterval)
+  timer.innerHTML = "Time Elapsed: " + seconds
 }
 
 function resetTime(){
-  console.log("heyooo")
-
-  window.clearInterval(startTime);
-  timer.innerHTML = "Stop Watch";
+  clearInterval(startInterval)
   seconds = 0
+  timer.innerHTML = "Stop Watch";
 
 }
 
 function startTimer(){
-  console.log("heyooo")
-
-  var timeElapsed = "Time elapsed: " + seconds;
+  var timeElapsed = "Seconds: " + seconds;
   timer.innerHTML = timeElapsed;
   seconds++
 }
